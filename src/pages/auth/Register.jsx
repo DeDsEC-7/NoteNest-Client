@@ -55,7 +55,7 @@ const Register = () => {
         <img src="/notenest.png" alt="NoteNest Logo" className="h-4 md:h-6  w-auto" />
       </div>
 
-      <div className="w-full max-w-sm backdrop-blur-xs shadow-lg rounded-2xl px-6 border-2 border-dashed border-primary-600/30">
+      <div className="w-full max-w-sm backdrop-blur-xs shadow-lg rounded-2xl p-6 border-2 border-dashed border-primary-600/30">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-2xl font-semibold text-typo-primary tracking-tight">

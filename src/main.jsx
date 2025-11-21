@@ -30,12 +30,13 @@ const router = createBrowserRouter([
   { path: "/forbidden", Component: Forbidden },
   { path: "/server-error", Component: ServerError },
   { path: "*", Component: NotFound },
-
+  { path: "/", Component: Home },
   // Protected routes
   {
     element: <ProtectedRoute />,
     children: [
       { path: "/home", Component: Home },
+      { path: "/", Component: Home },
       { path: "/notes", Component: Notes },
       { path: "/notes/view/:noteId?", Component: EditNote },
       { path: "/todos", Component: Todos },

@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@theme {
+  /* ===============================
+     TYPOGRAPHY
+  =============================== */
+  --font-display: "Inter", "Poppins", "sans-serif";
+  --font-body: "Inter", "sans-serif";
+
+  /* ===============================
+     PRIMARY (Focus Blue-Green)
+  =============================== */
+  --color-primary-900: #0A2C2E;  /* deep teal */
+  --color-primary-800: #0E3C3E;
+  --color-primary-700: #125153;  /* strong teal */
+  --color-primary-600: #157A7D;  /* brand teal */
+  --color-primary-500: #1BA0A3;  /* main accent */
+  --color-primary-400: #47BDBF;
+  --color-primary-300: #7DD7D9;
+  --color-primary-200: #A9E7E8;
+  --color-primary-100: #D5F5F6;
+
+  /* ===============================
+     ACCENT (Warm Amber / Gold)
+  =============================== */
+  --color-accent-700: #8B6B10;
+  --color-accent-600: #B48C1A;
+  --color-accent-500: #D6A826;   /* highlight / star color */
+  --color-accent-400: #E8C44F;
+  --color-accent-300: #F3DC80;
+
+  /* ===============================
+     FEEDBACK COLORS
+  =============================== */
+  --color-success: #22C55E;  /* green-500 */
+  --color-warning: #FACC15;  /* yellow-400 */
+  --color-error: #EF4444;    /* red-500 */
+  --color-info: #3B82F6;     /* blue-500 */
+
+  /* ===============================
+     TEXT COLORS
+  =============================== */
+  --color-typo-primary: #1E1E1E;
+  --color-typo-secondary: #555555;
+  --color-typo-muted: #888888;
+  --color-typo-inverse: #FFFFFF;
+
+  /* ===============================
+     BACKGROUND COLORS
+  =============================== */
+  --color-back-primary: #FFFFFF;     /* main background */
+  --color-back-secondary: #F7F9FA;   /* subtle background */
+  --color-back-highlight: #E6F4F5;   /* note hover / active bg */
+  --color-back-dark: #121212;        /* dark mode base */
+
+  /* ===============================
+     BORDER / DIVIDER
+  =============================== */
+  --color-border-light: #E5E7EB;
+  --color-border-dark: #374151;
+}
+:root{
+  --bg: #fffbe8;
+  --line-color: rgba(30,120,200,0.18); /* blue line */
+  --line-height: 28px;                 /* distance between lines */
+  --line-thickness: 1px;
+  --margin-color: #e04b4b;             /* red margin */
+  --margin-pos: 48px;                  /* margin distance from left */
+}
+
+.bg-paper {
+  background-color: var(--bg);
+  /* two background layers: 1) vertical margin line, 2) horizontal ruled lines */
+  background-image:
+    linear-gradient(to right,
+      transparent calc(var(--margin-pos) - 1px),
+      var(--margin-color) 1px,
+      transparent 0),
+    linear-gradient(to bottom,
+      transparent calc(var(--line-height) - var(--line-thickness)),
+      var(--line-color) calc(var(--line-height) - var(--line-thickness)),
+      var(--line-color) var(--line-height));
+  background-repeat: no-repeat, repeat;
+  /* sizes correspond to each background layer (order matters) */
+  background-size: 100% 100%, 100% var(--line-height);
+  /* keep content readable */
+ 
+  min-height: 100vh;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Remove scrollbar track background */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border-light);
+  border-radius: 8px;
+}
+
+/* Hover effect for thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #177073; /* slightly lighter hover shade */
+}
+
+/* Remove scrollbar arrows */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-light) transparent;
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.3s ease forwards;
+}
+/* Add these animations to your global CSS */
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.3s ease-out;
+}
+
+.animate-slide-out-right {
+  animation: slide-out-right 0.3s ease-in;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.3s ease-out;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out;
+}

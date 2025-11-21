@@ -52,7 +52,7 @@ const Register = () => {
   return (
     <div className="h-screen bg-paper flex flex-col justify-center items-center px-4 font-sans">
       <div className="mb-4">
-        <img src="/notenest.png" alt="NoteNest Logo" className="h-8 w-auto" />
+        <img src="/notenest.png" alt="NoteNest Logo" className="h-4 md:h-6  w-auto" />
       </div>
 
       <div className="w-full max-w-sm backdrop-blur-xs shadow-lg rounded-2xl p-6 border-2 border-dashed border-primary-600/30">
